@@ -1,15 +1,55 @@
 @import "~normalize-scss/sass/normalize/import-now";
 
+@import "assets/scss/colors";
+
+$font-color: $font-color--primary;
+$bg-color: $background--primary;
+
+html,
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+
+  color: $font-color;
+
+  background-color: $bg-color;
+
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  overflow-y: hidden;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  button {
+    font: {
+      family: inherit;
+      size: inherit;
+    }
+    line-height: inherit;
+    color: inherit;
+
+    cursor: pointer;
+  }
+}
+
+#root {
+  width: 100%;
+  height: 100%;
 }
