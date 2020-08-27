@@ -1,8 +1,14 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
 class Layout extends Component {
   render() {
-    return null;
+    return (
+      <Fragment>
+        <div>NAV</div>
+        <div>MAIN</div>
+        <div>FOOTER</div>
+      </Fragment>
+    );
   }
 }
 
