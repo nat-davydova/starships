@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 
 import Nav from "components/Nav/Nav";
+import Main from "components/Main/Main";
 import Footer from "components/Footer/Footer";
 
 import styles from "./Layout.module.scss";
@@ -10,7 +11,7 @@ class Layout extends Component {
     return (
       <Fragment>
         <Nav />
-        <div>MAIN</div>
+        <Main>{this.props.children}</Main>
         <Footer
           classes={{
             root: styles.footer
