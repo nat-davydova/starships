@@ -1,5 +1,7 @@
 import React from "react";
 
-const spaceshipName = ({ name }) => <p>{name}</p>;
+import styles from "./SpaceshipName.module.scss";
+
+const spaceshipName = ({ name }) => <p className={styles.name}>{name}</p>;
 
 export default spaceshipName;

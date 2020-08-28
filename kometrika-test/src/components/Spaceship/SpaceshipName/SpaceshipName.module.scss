@@ -1,0 +1,11 @@
+@import "colors";
+
+.name {
+	font: {
+		size: 1.1rem;
+		weight: 500;
+	}
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	color: $font-color--accent;
+}

@@ -19,9 +19,8 @@ const tableThead = props => (
         <p>Kuat Drive Yards</p>
       </TableTh>
       <TableTh>
-        <Spaceship />
+        <Spaceship name="Millennium Falcon" />
         <img src={FalconImg} />
-        <p>Millennium Falcon</p>
         <p>YT-1300 light freighter</p>
         <p>(Light freighter)</p>
         <p>Corellian Engineering Corporation</p>
