@@ -1,11 +1,13 @@
 import React from "react";
 
+import TableTr from "components/Table/TableTr/TableTr";
+
 import StarDestroyerImg from "assets/img/starships/star-destroyer.png";
 import FalconImg from "assets/img/starships/falcon.png";
 
 const tableThead = props => (
   <thead>
-    <tr>
+    <TableTr>
       <th></th>
       <th>
         <img src={StarDestroyerImg} />
@@ -21,7 +23,7 @@ const tableThead = props => (
         <p>(Light freighter)</p>
         <p>Corellian Engineering Corporation</p>
       </th>
-    </tr>
+    </TableTr>
   </thead>
 );
 
