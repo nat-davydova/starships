@@ -2,10 +2,12 @@ import React from "react";
 
 import Container from "components/Misc/Container/Container";
 
+import styles from "./Main.module.scss";
+
 const main = ({ children }) => (
-  <main>
+  <main className={styles.main}>
     <Container>
-      <div className="">Main 2{children}</div>
+      <div className={styles.main_inner}>Main 2{children}</div>
     </Container>
   </main>
 );

@@ -1,0 +1,15 @@
+@import "colors";
+
+.main {
+	padding-top: 60px;
+	height: 100%;
+	flex-grow: 1;
+
+	background-color: $_medium-grey;
+
+	box-sizing: border-box;
+}
+
+.main_inner {
+	padding: 60px 0;
+}
