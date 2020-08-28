@@ -12,16 +12,17 @@ const tableThead = props => (
     <TableTr>
       <TableTh></TableTh>
       <TableTh>
-        <Spaceship name="Star Destroyer" />
+        <Spaceship
+          name="Star Destroyer"
+          model="Imperial I-class Star Destroyer"
+        />
         <img src={StarDestroyerImg} />
-        <p>Imperial I-class Star Destroyer</p>
         <p>(Star Destroyer)</p>
         <p>Kuat Drive Yards</p>
       </TableTh>
       <TableTh>
-        <Spaceship name="Millennium Falcon" />
+        <Spaceship name="Millennium Falcon" model="YT-1300 light freighter" />
         <img src={FalconImg} />
-        <p>YT-1300 light freighter</p>
         <p>(Light freighter)</p>
         <p>Corellian Engineering Corporation</p>
       </TableTh>
