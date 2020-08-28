@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const nav = (props) => (
+import Container from "components/Misc/Container/Container";
 
-);
+const nav = props => <Container>Nav</Container>;
 
 export default nav;
