@@ -5,6 +5,7 @@ $_straw-brown: #D7C078;
 
 $_reef-green: #A1A332;
 
+$_light-grey: #424242;
 $_medium-grey: #303030;
 $_nero-grey: #212121;
 
@@ -13,6 +14,7 @@ $_brick-red: #B62321;
 $_white: #fff;
 
 // functional color scheme !!use it in developing!!
+$background--primary: $_light-grey;
 $background--accent: $_straw-brown;
 $background--danger: $_brick-red;
 $background--success: $_reef-green;
