@@ -1,5 +1,11 @@
 import React from "react";
 
-const logo = props => <div></div>;
+import { ReactComponent as LogoImg } from "assets/img/logo.svg";
+
+const logo = props => (
+  <div>
+    <LogoImg />
+  </div>
+);
 
 export default logo;
