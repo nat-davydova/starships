@@ -1,0 +1,19 @@
+$logo-img-dimensions: 45px;
+
+.logo {
+	display: flex;
+	height: 100%;
+	align-items: center;
+}
+
+.logo_img {
+	width: $logo-img-dimensions;
+	height: $logo-img-dimensions;
+}
+
+.logo_txt {
+	margin-left: 10px;
+
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
