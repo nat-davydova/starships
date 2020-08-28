@@ -6,7 +6,7 @@ import { sectionConfig } from "./config";
 
 class ComparisonTable extends Component {
   render() {
-    return <Section sectionConfig={sectionConfig} />;
+    return <Section sectionConfig={sectionConfig}></Section>;
   }
 }
 
