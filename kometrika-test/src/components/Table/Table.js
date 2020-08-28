@@ -4,7 +4,7 @@ import styles from "./Table.module.scss";
 
 const table = props => (
   <div className={styles.tableContainer}>
-    <table>
+    <table className={styles.table}>
       <thead>
         <tr>
           <th></th>

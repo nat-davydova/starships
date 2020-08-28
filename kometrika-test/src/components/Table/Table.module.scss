@@ -4,7 +4,6 @@
 .tableContainer {
 	@include transition-mix();
 
-	margin: auto;
 	padding: 30px;
 
 	border-radius: 5px;
@@ -21,5 +20,28 @@
 						0 4px 5px 0 rgba(0,0,0,0.14),
 						0 1px 10px 0 rgba(0,0,0,0.12),
 						0 2px 4px -1px rgba(0,0,0,0.3);
+	}
+}
+
+.table {
+	margin: auto;
+
+	border-collapse: collapse;
+
+	th,
+	td {
+		padding: 15px;
+
+		border: 1px solid rgba(255,255,255, .2);
+	}
+
+	td {
+		strong {
+			font: {
+				weight: 500;
+			}
+			text-transform: uppercase;
+			color: $font-color--accent;
+		}
 	}
 }
