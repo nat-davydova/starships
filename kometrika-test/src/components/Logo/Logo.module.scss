@@ -1,3 +1,5 @@
+@import "colors";
+
 $logo-img-dimensions: 45px;
 
 .logo {
@@ -14,6 +16,10 @@ $logo-img-dimensions: 45px;
 .logo_txt {
 	margin-left: 10px;
 
+	font: {
+		weight: 500;
+	}
+	color: $font-color--accent;
 	text-transform: uppercase;
-	letter-spacing: 1px;
+	letter-spacing: 1.5px;
 }
