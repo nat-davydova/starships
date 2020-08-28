@@ -2,7 +2,7 @@ import React from "react";
 
 import TableTr from "components/Table/TableTr/TableTr";
 import TableTh from "components/Table/TableTh/TableTh";
-import Starship from "components/Starship/Starship";
+import Starship from "components/Spaceship/Spaceship";
 
 import StarDestroyerImg from "assets/img/starships/star-destroyer.png";
 import FalconImg from "assets/img/starships/falcon.png";
