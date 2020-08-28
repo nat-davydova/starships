@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 
+import Section from "components/Section/Section";
+
 import { sectionConfig } from "./config";
 
 class ComparisonTable extends Component {
   render() {
-    return <div></div>;
+    return <Section sectionConfig={sectionConfig} />;
   }
 }
 
