@@ -1,11 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import styles from "./Table.module.scss";
 
 import StarDestroyerImg from "assets/img/starships/star-destroyer.png";
 import FalconImg from "assets/img/starships/falcon.png";
 
-const table = props => (
+const table = ({ config }) => (
   <div className={styles.tableContainer}>
     <table className={styles.table}>
       <thead>
@@ -95,5 +96,9 @@ const table = props => (
     </table>
   </div>
 );
+
+table.propTypes = {
+  config: PropTypes.object.isRequired
+};
 
 export default table;
