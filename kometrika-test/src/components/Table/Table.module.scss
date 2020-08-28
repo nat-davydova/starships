@@ -33,6 +33,45 @@
 		padding: 15px;
 
 		border: 1px solid rgba(255,255,255, .2);
+
+		img {
+			width: auto;
+			max-width: 100%;
+			max-height: 130px;
+		}
+
+		p {
+			font: {
+				weight: 500;
+			}
+
+			&:nth-child(2) {
+				font: {
+					size: 1.1rem;
+				}
+				text-transform: uppercase;
+				letter-spacing: 1.5px;
+				color: $font-color--accent;
+			}
+
+			&:nth-child(3) {
+				margin-bottom: -5px;
+			}
+
+			&:nth-child(4) {
+				font: {
+					size: .8rem;
+				}
+			}
+
+			&:nth-child(5) {
+				font: {
+					size: .9rem;
+					weight: 400;
+				}
+				color: $font-color--secondary;
+			}
+		}
 	}
 
 	td {
@@ -45,3 +84,5 @@
 		}
 	}
 }
+
+
