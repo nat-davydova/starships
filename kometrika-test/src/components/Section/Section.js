@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import SectionTitle from "./SectionTitle/SectionTitle";
+import SectionSubtitle from "./SectionSubtitle/SectionSubtitle";
 
 const section = ({ sectionConfig, children }) => {
   const { title, subtitle } = sectionConfig;
@@ -10,7 +11,7 @@ const section = ({ sectionConfig, children }) => {
     <section>
       <header>
         <SectionTitle>{title}</SectionTitle>
-        <h2>{subtitle}</h2>
+        <SectionSubtitle>{subtitle}</SectionSubtitle>
       </header>
       <div>Section Content Is Here {children}</div>
     </section>
