@@ -1,11 +1,18 @@
 @import "colors";
+@import "media-q";
 
 .title {
 	font: {
+		size: 1.5rem;
 		weight: 500;
 	}
 	text-transform: uppercase;
-	text-align: center;
 	letter-spacing: 2px;
 	color: $font-color--accent;
+
+	@media (min-width: $mobile-width) {
+		font: {
+			size: 2rem;
+		}
+	}
 }

@@ -1,9 +1,16 @@
 @import "colors";
+@import "media-q";
 
 .subtitle {
 	font: {
+		size: 1.2rem;
 		weight: 400;
 	}
-	text-align: center;
 	color: $font-color--secondary;
+
+	@media (min-width: $mobile-width) {
+		font: {
+			size: 1.5rem;
+		}
+	}
 }
