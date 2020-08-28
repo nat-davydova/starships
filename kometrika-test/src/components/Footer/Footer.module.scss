@@ -1,7 +1,11 @@
 .footer {
 	padding: 16px 0;
 
+	font: {
+		size: .8rem;
+	}
 	text-align: center;
+	letter-spacing: 1px;
 
 	p:first-child {
 		margin-top: 0;
