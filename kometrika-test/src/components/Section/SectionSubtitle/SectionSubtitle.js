@@ -1,5 +1,9 @@
 import React from "react";
 
-const sectionSubtitle = ({ children }) => <h2>{children}</h2>;
+import styles from "./SectionSubtitle.module.scss";
+
+const sectionSubtitle = ({ children }) => (
+  <h2 className={styles.subtitle}>{children}</h2>
+);
 
 export default sectionSubtitle;

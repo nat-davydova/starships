@@ -1,0 +1,9 @@
+@import "colors";
+
+.subtitle {
+	font: {
+		weight: 400;
+	}
+	text-align: center;
+	color: $font-color--secondary;
+}

@@ -21,5 +21,5 @@ $background--dark-2: $_nero-grey;
 $background--medium: $_medium-grey;
 
 $font-color--primary: $_white;
-$font-color--secondary: $_medium-grey;
+$font-color--secondary: rgba($_white, .7);
 $font-color--accent: $_straw-brown;
