@@ -1,13 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import SectionTitle from "./SectionTitle/SectionTitle";
+
 const section = ({ sectionConfig, children }) => {
   const { title, subtitle } = sectionConfig;
 
   return (
     <section>
       <header>
-        <h1>{title}</h1>
+        <SectionTitle>{title}</SectionTitle>
         <h2>{subtitle}</h2>
       </header>
       <div>Section Content Is Here {children}</div>
