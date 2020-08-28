@@ -98,7 +98,7 @@ const table = ({ config }) => (
 );
 
 table.propTypes = {
-  config: PropTypes.object.isRequired
+  config: PropTypes.array.isRequired
 };
 
 export default table;
