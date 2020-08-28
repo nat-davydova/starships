@@ -12,9 +12,8 @@ const tableThead = props => (
     <TableTr>
       <TableTh></TableTh>
       <TableTh>
-        <Spaceship />
+        <Spaceship name="Star Destroyer" />
         <img src={StarDestroyerImg} />
-        <p>Star Destroyer</p>
         <p>Imperial I-class Star Destroyer</p>
         <p>(Star Destroyer)</p>
         <p>Kuat Drive Yards</p>
