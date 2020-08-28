@@ -4,12 +4,14 @@ import PropTypes from "prop-types";
 import SectionTitle from "./SectionTitle/SectionTitle";
 import SectionSubtitle from "./SectionSubtitle/SectionSubtitle";
 
+import styles from "./Section.module.scss";
+
 const section = ({ sectionConfig, children }) => {
   const { title, subtitle } = sectionConfig;
 
   return (
     <section>
-      <header>
+      <header className={styles.header}>
         <SectionTitle>{title}</SectionTitle>
         <SectionSubtitle>{subtitle}</SectionSubtitle>
       </header>
