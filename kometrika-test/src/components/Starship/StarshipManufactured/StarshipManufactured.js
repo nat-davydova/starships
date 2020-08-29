@@ -8,7 +8,7 @@ const starshipManufactured = ({ manufacturer }) => (
 );
 
 starshipManufactured.propTypes = {
-  manufactured: PropTypes.string.isRequired
+  manufacturer: PropTypes.string.isRequired
 };
 
 export default starshipManufactured;
