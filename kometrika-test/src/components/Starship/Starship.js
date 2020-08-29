@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import PropTypes from "prop-types";
 
 import StarshipName from "./StarshipName/StarshipName";
 import StarshipModel from "./StarshipModel/StarshipModel";
@@ -16,6 +17,14 @@ const starship = ({ name, model, starshipClass, manufactured, imgSrc }) => {
       <StarshipManufactured manufactured={manufactured} />
     </Fragment>
   );
+};
+
+starship.propTypes = {
+  name: PropTypes.string.isRequired,
+  model: PropTypes.string.isRequired,
+  starshipClass: PropTypes.string.isRequired,
+  manufactured: PropTypes.string.isRequired,
+  imgSrc: PropTypes.string
 };
 
 export default starship;
