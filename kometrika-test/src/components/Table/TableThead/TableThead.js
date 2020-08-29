@@ -4,6 +4,8 @@ import TableTr from "components/Table/TableTr/TableTr";
 import TableTh from "components/Table/TableTh/TableTh";
 import Spaceship from "components/Starship/Starship";
 
+import Img from "components/Misc/Img/Img";
+
 import StarDestroyerImg from "assets/img/starships/star-destroyer.png";
 import FalconImg from "assets/img/starships/falcon.png";
 
@@ -18,7 +20,7 @@ const tableThead = props => (
           starshipClass="Star Destroyer"
           manufactured="Kuat Drive Yards"
         />
-        {/*<img src={StarDestroyerImg} />*/}
+        <Img src={StarDestroyerImg} alt={`Star Destroyer`} />
       </TableTh>
       <TableTh>
         <Spaceship
@@ -27,7 +29,7 @@ const tableThead = props => (
           starshipClass="Light freighter"
           manufactured="Corellian Engineering Corporation"
         />
-        {/*<img src={FalconImg} />*/}
+        <Img src={FalconImg} alt={`Millennium Falcon`} />
       </TableTh>
     </TableTr>
   </thead>
