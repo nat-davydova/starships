@@ -5,15 +5,20 @@ import { v4 as uuid } from "uuid";
 import TableTr from "components/Table/TableTr/TableTr";
 import TableTd from "components/Table/TableTd/TableTd";
 
-const tableTbody = ({ config }) => {
+const tableTbody = ({ config, tbodyProps = [] }) => {
   const tableData = [];
   const defaultConfigElem = config[0];
 
   for (let configKey in defaultConfigElem) {
     const trData = [];
+
+    if (tbodyProps && tbodyProps.indexOf(configKey) < 0) {
+      continue;
+    }
+
     trData.push(
       <TableTd key={uuid()} isCriteria>
-        {configKey}
+        {configKey.split("_").join(" ")}
       </TableTd>
     );
 
@@ -28,6 +33,7 @@ const tableTbody = ({ config }) => {
 };
 
 tableTbody.propTypes = {
+  tbodyProps: PropTypes.array,
   config: PropTypes.array.isRequired
 };
 
