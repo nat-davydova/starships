@@ -1,0 +1,9 @@
+@import "colors";
+
+.isCriteria {
+	font: {
+		weight: 500;
+	}
+	text-transform: uppercase;
+	color: $font-color--accent;
+}

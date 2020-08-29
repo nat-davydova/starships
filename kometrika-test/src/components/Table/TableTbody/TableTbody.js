@@ -7,16 +7,12 @@ import TableTd from "components/Table/TableTd/TableTd";
 const tableTbody = ({ config }) => (
   <tbody>
     <TableTr>
-      <TableTd>
-        <strong>Cost (in credits)</strong>
-      </TableTd>
+      <TableTd isCriteria>Cost (in credits)</TableTd>
       <TableTd>150000000</TableTd>
       <TableTd>100000</TableTd>
     </TableTr>
     <TableTr>
-      <TableTd>
-        <strong>Length</strong>
-      </TableTd>
+      <TableTd isCriteria>Length</TableTd>
       <TableTd>1,600</TableTd>
       <TableTd>34.37</TableTd>
     </TableTr>
