@@ -1,3 +1,6 @@
+import StarDestroyerImg from "assets/img/starships/star-destroyer.png";
+import FalconImg from "assets/img/starships/falcon.png";
+
 export const sectionConfig = {
   title: "Starships Comparison Table",
   subtitle: "Check which one is better!"
@@ -26,7 +29,8 @@ export const tempConfig = [
     ],
     created: "2014-12-10T15:08:19.848000Z",
     edited: "2014-12-20T21:23:49.870000Z",
-    url: "http://swapi.dev/api/starships/3/"
+    url: "http://swapi.dev/api/starships/3/",
+    imgSrc: StarDestroyerImg
   },
   {
     name: "Millennium Falcon",
@@ -55,6 +59,7 @@ export const tempConfig = [
     ],
     created: "2014-12-10T16:59:45.094000Z",
     edited: "2014-12-20T21:23:49.880000Z",
-    url: "http://swapi.dev/api/starships/10/"
+    url: "http://swapi.dev/api/starships/10/",
+    imgSrc: FalconImg
   }
 ];
