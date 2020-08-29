@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
 import Section from "components/Section/Section";
-import Table from "components/Table/Table";
+import ComparisonTable from "components/ComparisonTable/ComparisonTable";
 
 import { sectionConfig, tempConfig } from "./config";
 
-class ComparisonTable extends Component {
+class Comparison extends Component {
   render() {
     const theadProps = ["name", "model", "manufactured", "starship_class"];
     const tbodyProps = [
@@ -22,7 +22,7 @@ class ComparisonTable extends Component {
 
     return (
       <Section sectionConfig={sectionConfig}>
-        <Table
+        <ComparisonTable
           theadProps={theadProps}
           tbodyProps={tbodyProps}
           config={tempConfig}
@@ -32,4 +32,4 @@ class ComparisonTable extends Component {
   }
 }
 
-export default ComparisonTable;
+export default Comparison;

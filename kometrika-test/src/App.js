@@ -1,7 +1,7 @@
 import React from "react";
 
 import Layout from "./containers/Layout/Layout";
-import ComparisonTable from "./containers/Comparison/ComparisonTable";
+import Comparison from "./containers/Comparison/Comparison";
 
 import "./App.scss";
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Layout>
-        <ComparisonTable />
+        <Comparison />
       </Layout>
     </div>
   );
