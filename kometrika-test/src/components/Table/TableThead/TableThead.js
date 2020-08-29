@@ -12,24 +12,6 @@ const tableThead = ({ config }) => (
   <thead>
     <TableTr>
       <TableTh></TableTh>
-      <TableTh>
-        <Spaceship
-          imgSrc={StarDestroyerImg}
-          name="Star Destroyer"
-          model="Imperial I-class Star Destroyer"
-          starshipClass="Star Destroyer"
-          manufactured="Kuat Drive Yards"
-        />
-      </TableTh>
-      <TableTh>
-        <Spaceship
-          imgSrc={FalconImg}
-          name="Millennium Falcon"
-          model="YT-1300 light freighter"
-          starshipClass="Light freighter"
-          manufactured="Corellian Engineering Corporation"
-        />
-      </TableTh>
     </TableTr>
   </thead>
 );
