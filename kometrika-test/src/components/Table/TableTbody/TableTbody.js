@@ -12,20 +12,24 @@ const tableTbody = ({ config, tbodyProps = [] }) => {
   for (let configKey in defaultConfigElem) {
     const trData = [];
 
+    // if we have a list of table body properties and data item is not in the list - it's not rendered
     if (tbodyProps && tbodyProps.indexOf(configKey) < 0) {
       continue;
     }
 
+    // rendering row title criteria
     trData.push(
       <TableTd key={uuid()} isCriteria>
         {configKey.split("_").join(" ")}
       </TableTd>
     );
 
+    // rendering table cells with data
     config.forEach(configElem => {
       trData.push(<TableTd key={uuid()}>{configElem[configKey]}</TableTd>);
     });
 
+    // rendering single table row
     tableData.push(<TableTr key={uuid()}>{trData}</TableTr>);
   }
 
