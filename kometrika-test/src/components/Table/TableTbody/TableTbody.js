@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { v4 as uuid } from "uuid";
 
 import TableTr from "components/Table/TableTr/TableTr";
 import TableTd from "components/Table/TableTd/TableTd";
@@ -10,13 +11,17 @@ const tableTbody = ({ config }) => {
 
   for (let configKey in defaultConfigElem) {
     const trData = [];
-    trData.push(<TableTd isCriteria>{configKey}</TableTd>);
+    trData.push(
+      <TableTd key={uuid()} isCriteria>
+        {configKey}
+      </TableTd>
+    );
 
     config.forEach(configElem => {
-      trData.push(<TableTd>{configElem[configKey]}</TableTd>);
+      trData.push(<TableTd key={uuid()}>{configElem[configKey]}</TableTd>);
     });
 
-    tableData.push(<TableTr>{trData}</TableTr>);
+    tableData.push(<TableTr key={uuid()}>{trData}</TableTr>);
   }
 
   return <tbody>{tableData}</tbody>;
