@@ -6,11 +6,11 @@ import TableTbody from "./TableTbody/TableTbody";
 
 import styles from "./Table.module.scss";
 
-const table = ({ config, tbodyProps = [] }) => {
+const table = ({ config, theadContent = [], tbodyProps = [] }) => {
   return (
     <div className={styles.tableContainer}>
       <table className={styles.table}>
-        <TableThead config={config} />
+        <TableThead theadContent={theadContent} />
         <TableTbody tbodyProps={tbodyProps} config={config} />
       </table>
     </div>

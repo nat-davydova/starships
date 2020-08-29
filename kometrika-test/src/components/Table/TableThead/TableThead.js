@@ -8,16 +8,21 @@ import Spaceship from "components/Starship/Starship";
 import StarDestroyerImg from "assets/img/starships/star-destroyer.png";
 import FalconImg from "assets/img/starships/falcon.png";
 
-const tableThead = ({ config }) => (
-  <thead>
-    <TableTr>
-      <TableTh></TableTh>
-    </TableTr>
-  </thead>
-);
+const tableThead = ({ theadContent }) => {
+  const theadArr = theadContent.map(elem => <TableTh>{elem}</TableTh>);
+
+  return (
+    <thead>
+      <TableTr>
+        <TableTh></TableTh>
+        {theadArr}
+      </TableTr>
+    </thead>
+  );
+};
 
 tableThead.propTypes = {
-  config: PropTypes.array.isRequired
+  theadContent: PropTypes.array.isRequired
 };
 
 export default tableThead;

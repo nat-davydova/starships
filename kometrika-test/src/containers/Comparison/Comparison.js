@@ -7,7 +7,6 @@ import { sectionConfig, tempConfig } from "./config";
 
 class Comparison extends Component {
   render() {
-    const theadProps = ["name", "model", "manufactured", "starship_class"];
     const tbodyProps = [
       "cost_in_credits",
       "length",
@@ -22,11 +21,7 @@ class Comparison extends Component {
 
     return (
       <Section sectionConfig={sectionConfig}>
-        <ComparisonTable
-          theadProps={theadProps}
-          tbodyProps={tbodyProps}
-          config={tempConfig}
-        />
+        <ComparisonTable tbodyProps={tbodyProps} config={tempConfig} />
       </Section>
     );
   }

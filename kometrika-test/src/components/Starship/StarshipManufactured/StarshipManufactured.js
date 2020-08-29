@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 import styles from "./StarshipManufactured.module.scss";
 
-const starshipManufactured = ({ manufactured }) => (
-  <p className={styles.manufactured}>{manufactured}</p>
+const starshipManufactured = ({ manufacturer }) => (
+  <p className={styles.manufactured}>{manufacturer}</p>
 );
 
 starshipManufactured.propTypes = {

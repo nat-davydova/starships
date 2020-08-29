@@ -7,24 +7,28 @@ import StarshipClass from "./StarshipClass/StarshipClass";
 import StarshipManufactured from "./StarshipManufactured/StarshipManufactured";
 import StarshipImg from "./StarshipImg/StarshipImg";
 
-const starship = ({ name, model, starshipClass, manufactured, imgSrc }) => {
+const starship = ({ config }) => {
+  const {
+    name,
+    model,
+    starship_class: starshipClass,
+    manufacturer,
+    imgSrc
+  } = config;
+
   return (
     <Fragment>
       <StarshipImg imgSrc={imgSrc} imgAlt={`${name} Image`} />
       <StarshipName name={name} />
       <StarshipModel model={model} />
       <StarshipClass starshipClass={starshipClass} />
-      <StarshipManufactured manufactured={manufactured} />
+      <StarshipManufactured manufacturer={manufacturer} />
     </Fragment>
   );
 };
 
 starship.propTypes = {
-  name: PropTypes.string.isRequired,
-  model: PropTypes.string.isRequired,
-  starshipClass: PropTypes.string.isRequired,
-  manufactured: PropTypes.string.isRequired,
-  imgSrc: PropTypes.string
+  config: PropTypes.object.isRequired
 };
 
 export default starship;
