@@ -1,5 +1,9 @@
 import React from "react";
 
-const starshipManufactured = ({ manufactured }) => <p>{manufactured}</p>;
+import styles from "./StarshipManufactured.module.scss";
+
+const starshipManufactured = ({ manufactured }) => (
+  <p className={styles.manufactured}>{manufactured}</p>
+);
 
 export default starshipManufactured;

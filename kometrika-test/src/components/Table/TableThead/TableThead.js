@@ -16,18 +16,18 @@ const tableThead = props => (
           name="Star Destroyer"
           model="Imperial I-class Star Destroyer"
           spaceClass="Star Destroyer"
+          manufactured="Kuat Drive Yards"
         />
         {/*<img src={StarDestroyerImg} />*/}
-        <p>Kuat Drive Yards</p>
       </TableTh>
       <TableTh>
         <Spaceship
           name="Millennium Falcon"
           model="YT-1300 light freighter"
           spaceClass="Light freighter"
+          manufactured="Corellian Engineering Corporation"
         />
         {/*<img src={FalconImg} />*/}
-        <p>Corellian Engineering Corporation</p>
       </TableTh>
     </TableTr>
   </thead>
