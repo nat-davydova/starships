@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 
 import styles from "./StarshipClass.module.scss";
 
-const starshipClass = ({ spaceClass }) => (
-  <p className={styles.starshipClass}>({spaceClass})</p>
+const starshipClass = ({ starshipClass }) => (
+  <p className={styles.starshipClass}>({starshipClass})</p>
 );
 
 starshipClass.propTypes = {
-  spaceClass: PropTypes.string.isRequired
+  starshipClass: PropTypes.string.isRequired
 };
 
 export default starshipClass;

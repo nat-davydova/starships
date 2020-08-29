@@ -15,7 +15,7 @@ const tableThead = props => (
         <Spaceship
           name="Star Destroyer"
           model="Imperial I-class Star Destroyer"
-          spaceClass="Star Destroyer"
+          starshipClass="Star Destroyer"
           manufactured="Kuat Drive Yards"
         />
         {/*<img src={StarDestroyerImg} />*/}
@@ -24,7 +24,7 @@ const tableThead = props => (
         <Spaceship
           name="Millennium Falcon"
           model="YT-1300 light freighter"
-          spaceClass="Light freighter"
+          starshipClass="Light freighter"
           manufactured="Corellian Engineering Corporation"
         />
         {/*<img src={FalconImg} />*/}
