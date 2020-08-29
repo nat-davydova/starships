@@ -2,22 +2,23 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import TableTr from "components/Table/TableTr/TableTr";
+import TableTd from "components/Table/TableTd/TableTd";
 
 const tableTbody = ({ config }) => (
   <tbody>
     <TableTr>
-      <td>
+      <TableTd>
         <strong>Cost (in credits)</strong>
-      </td>
-      <td>150000000</td>
-      <td>100000</td>
+      </TableTd>
+      <TableTd>150000000</TableTd>
+      <TableTd>100000</TableTd>
     </TableTr>
     <TableTr>
-      <td>
+      <TableTd>
         <strong>Length</strong>
-      </td>
-      <td>1,600</td>
-      <td>34.37</td>
+      </TableTd>
+      <TableTd>1,600</TableTd>
+      <TableTd>34.37</TableTd>
     </TableTr>
   </tbody>
 );

@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const tableTh = ({ children }) => <th>{children}</th>;
+const tableTd = ({ children }) => <td>{children}</td>;
 
-tableTh.propTypes = {
+tableTd.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.node,
@@ -11,4 +11,4 @@ tableTh.propTypes = {
   ])
 };
 
-export default tableTh;
+export default tableTd;
