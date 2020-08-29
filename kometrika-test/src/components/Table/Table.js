@@ -9,7 +9,7 @@ const table = ({ config }) => {
   return (
     <div className={styles.tableContainer}>
       <table className={styles.table}>
-        <TableThead />
+        <TableThead config={config} />
         <tbody>
           <tr>
             <td>
