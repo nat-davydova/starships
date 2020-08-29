@@ -7,7 +7,7 @@ import styles from "./Logo.module.scss";
 const logo = props => (
   <div className={styles.logo}>
     <LogoImg className={styles.logo_img} />
-    <span className={styles.logo_txt}>Star Wars Spaceships Comparison</span>
+    <span className={styles.logo_txt}>Star Wars Starships Comparison</span>
   </div>
 );
 

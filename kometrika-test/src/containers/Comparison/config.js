@@ -1,5 +1,5 @@
 export const sectionConfig = {
-  title: "Spaceships Comparison Table",
+  title: "Starships Comparison Table",
   subtitle: "Check which one is better!"
 };
 

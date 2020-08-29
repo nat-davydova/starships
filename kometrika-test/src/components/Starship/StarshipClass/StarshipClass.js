@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import styles from "./SpaceshipClass.module.scss";
+import styles from "./StarshipClass.module.scss";
 
-const spaceshipClass = ({ spaceClass }) => (
+const starshipClass = ({ spaceClass }) => (
   <p className={styles.starshipClass}>({spaceClass})</p>
 );
 
-spaceshipClass.propTypes = {
+starshipClass.propTypes = {
   spaceClass: PropTypes.string.isRequired
 };
 
-export default spaceshipClass;
+export default starshipClass;
