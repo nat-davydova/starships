@@ -1,15 +1,15 @@
 import React, { Fragment } from "react";
 
-import SpaceshipName from "./StarshipName/StarshipName";
-import SpaceshipModel from "./StarshipModel/StarshipModel";
-import SpaceshipClass from "./StarshipClass/StarshipClass";
+import StarshipName from "./StarshipName/StarshipName";
+import StarshipModel from "./StarshipModel/StarshipModel";
+import StarshipClass from "./StarshipClass/StarshipClass";
 
 const starship = ({ name, model, spaceClass }) => {
   return (
     <Fragment>
-      <SpaceshipName name={name} />
-      <SpaceshipModel model={model} />
-      <SpaceshipClass spaceClass={spaceClass} />
+      <StarshipName name={name} />
+      <StarshipModel model={model} />
+      <StarshipClass spaceClass={spaceClass} />
     </Fragment>
   );
 };
