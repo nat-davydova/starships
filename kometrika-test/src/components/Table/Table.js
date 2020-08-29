@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import TableThead from "./TableThead/TableThead";
+import TableTbody from "./TableTbody/TableTbody";
 
 import styles from "./Table.module.scss";
 
@@ -10,6 +11,7 @@ const table = ({ config }) => {
     <div className={styles.tableContainer}>
       <table className={styles.table}>
         <TableThead config={config} />
+        <TableTbody config={config} />
         <tbody>
           <tr>
             <td>
