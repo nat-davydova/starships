@@ -9,12 +9,10 @@ import { sectionConfig } from "./config";
 import { grabbingStarship } from "store/actions/actions";
 
 class Comparison extends Component {
-  async componentDidMount() {
-    const arr = [3, 10, 11, 12, 15, 17, 21, 22, 23];
-
-    for (const elem of arr) {
-      await this.props.onGrabbingStarship(elem);
-    }
+  componentDidMount() {
+    // pass film number here
+    // Star Wars V - is equal to '2' num
+    this.props.onGrabbingStarship(2);
   }
 
   render() {

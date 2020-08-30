@@ -23,8 +23,14 @@ const grabbingError = errorTxt => {
 export const grabbingStarship = num => {
   return async dispatch => {
     try {
-      const shipsConfig = await axios.get(`/${num}/`);
-      dispatch(grabbingSuccess(shipsConfig.data));
+      const filmData = await axios.get(`/${num}/`);
+      const starshipsArr = filmData.data.starships;
+
+      for (const shipElem of starshipsArr) {
+        const ship = await axios.get(`${shipElem}`);
+        const shipData = ship.data;
+        dispatch(grabbingSuccess(shipData));
+      }
     } catch (e) {
       dispatch(grabbingError(e));
     }
