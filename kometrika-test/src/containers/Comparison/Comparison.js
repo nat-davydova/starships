@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import Section from "components/Section/Section";
 import ComparisonTable from "components/ComparisonTable/ComparisonTable";
@@ -21,10 +22,19 @@ class Comparison extends Component {
 
     return (
       <Section sectionConfig={sectionConfig}>
-        {/*<ComparisonTable tbodyProps={tbodyProps} config={tempConfig} />*/}
+        <ComparisonTable
+          tbodyProps={tbodyProps}
+          config={this.props.starships}
+        />
       </Section>
     );
   }
 }
 
-export default Comparison;
+const mapStateToProps = state => {
+  return {
+    starships: state.starships
+  };
+};
+
+export default connect(mapStateToProps)(Comparison);
