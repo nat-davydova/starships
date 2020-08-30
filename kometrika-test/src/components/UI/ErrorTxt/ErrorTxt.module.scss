@@ -1,0 +1,9 @@
+@import "colors";
+
+.error {
+	font: {
+		weight: 500;
+	}
+	color: $font-color--danger;
+	text-align: center;
+}

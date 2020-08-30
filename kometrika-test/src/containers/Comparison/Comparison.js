@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import Section from "components/Section/Section";
 import ComparisonTable from "components/ComparisonTable/ComparisonTable";
+import ErrorTxt from "components/UI/ErrorTxt/ErrorTxt";
 
 import { sectionConfig } from "./config";
 import { grabbingStarship } from "store/actions/actions";
@@ -31,10 +32,14 @@ class Comparison extends Component {
 
     return (
       <Section sectionConfig={sectionConfig}>
-        <ComparisonTable
-          tbodyProps={tbodyProps}
-          config={this.props.starships}
-        />
+        {this.props.isError && <ErrorTxt errorTxt={this.props.errorTxt} />}
+
+        {!this.props.isError && (
+          <ComparisonTable
+            tbodyProps={tbodyProps}
+            config={this.props.starships}
+          />
+        )}
       </Section>
     );
   }
@@ -42,7 +47,9 @@ class Comparison extends Component {
 
 const mapStateToProps = state => {
   return {
-    starships: state.starships
+    starships: state.starships,
+    isError: state.isError,
+    errorTxt: state.errorTxt
   };
 };
 
