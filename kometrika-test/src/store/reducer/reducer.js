@@ -3,7 +3,9 @@ import * as actionTypes from "../actions/actionTypes";
 import { shipsImgs } from "./config";
 
 const initState = {
-  starships: []
+  starships: [],
+  isError: false,
+  errorTxt: ""
 };
 
 const starshipConfigAddImgs = starshipConfig => {
@@ -25,8 +27,20 @@ const reducer = (state = initState, action) => {
 
       return {
         ...state,
+        isError: false,
+        errorTxt: "",
         starships: starshipsWithImgs
       };
+
+    case actionTypes.STARSHIPS_ERROR:
+      const errorTxt = action.payload.errorTxt;
+
+      return {
+        ...state,
+        isError: true,
+        errorTxt: errorTxt
+      };
+
     default:
       return state;
   }

@@ -11,13 +11,22 @@ const grabbingSuccess = config => {
   };
 };
 
+const grabbingError = errorTxt => {
+  return {
+    type: actionTypes.STARSHIPS_ERROR,
+    payload: {
+      errorTxt: errorTxt
+    }
+  };
+};
+
 export const grabbingStarship = num => {
   return async dispatch => {
     try {
-      const shipsConfig = await axios.get(`/${num}/`);
+      const shipsConfig = await axios.get(`ee/${num}/`);
       dispatch(grabbingSuccess(shipsConfig.data));
     } catch (e) {
-      console.log(e);
+      dispatch(grabbingError(e));
     }
   };
 };
