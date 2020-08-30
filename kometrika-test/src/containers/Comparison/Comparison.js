@@ -5,7 +5,7 @@ import Section from "components/Section/Section";
 import ComparisonTable from "components/ComparisonTable/ComparisonTable";
 
 import { sectionConfig } from "./config";
-import { grabbingStarship } from "../../store/actions";
+import { grabbingStarship } from "store/actions/actions";
 
 class Comparison extends Component {
   async componentDidMount() {

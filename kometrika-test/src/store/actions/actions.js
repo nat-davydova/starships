@@ -1,8 +1,10 @@
 import axios from "axios/axios-starships";
 
+import * as actionTypes from "./actionTypes";
+
 const grabbingSuccess = config => {
   return {
-    type: "STARSHIPS_SUCCESS",
+    type: actionTypes.STARSHIPS_SUCCESS,
     payload: {
       config: config
     }

@@ -1,3 +1,5 @@
+import * as actionTypes from "../actions/actionTypes";
+
 import { shipsImgs } from "./config";
 
 const initState = {
@@ -14,7 +16,7 @@ const starshipConfigAddImgs = starshipConfig => {
 
 const reducer = (state = initState, action) => {
   switch (action.type) {
-    case "STARSHIPS_SUCCESS":
+    case actionTypes.STARSHIPS_SUCCESS:
       const starships = state.starships.concat(action.payload.config);
 
       const starshipsWithImgs = starships.map(elem =>
