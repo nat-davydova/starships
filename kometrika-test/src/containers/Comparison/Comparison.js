@@ -6,13 +6,14 @@ import ComparisonTable from "components/ComparisonTable/ComparisonTable";
 import ErrorTxt from "components/UI/ErrorTxt/ErrorTxt";
 
 import { sectionConfig } from "./config";
-import { grabbingStarship } from "store/actions/actions";
+import { grabbingStarships, starshipsMinMax } from "store/actions/actions";
 
 class Comparison extends Component {
-  componentDidMount() {
+  async componentDidMount() {
     // pass film number here
-    // Star Wars V - is equal to '2' num
-    this.props.onGrabbingStarship(2);
+    // Star Wars V - is equal to '2' num in the SWAPI API
+    await this.props.onGrabbingStarships(2);
+    this.props.onSortingStarships();
   }
 
   render() {
@@ -53,7 +54,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onGrabbingStarship: elem => dispatch(grabbingStarship(elem))
+    onGrabbingStarships: elem => dispatch(grabbingStarships(elem)),
+    onSortingStarships: () => dispatch(starshipsMinMax())
   };
 };
 

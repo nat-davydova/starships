@@ -20,7 +20,7 @@ const grabbingError = errorTxt => {
   };
 };
 
-export const grabbingStarship = num => {
+export const grabbingStarships = num => {
   return async dispatch => {
     try {
       const filmData = await axios.get(`/${num}/`);
@@ -34,5 +34,11 @@ export const grabbingStarship = num => {
     } catch (e) {
       dispatch(grabbingError(e));
     }
+  };
+};
+
+export const starshipsMinMax = () => {
+  return {
+    type: actionTypes.STARSHIPS_MINMAX
   };
 };

@@ -41,6 +41,11 @@ const reducer = (state = initState, action) => {
         errorTxt: errorTxt
       };
 
+    case actionTypes.STARSHIPS_MINMAX:
+      console.log(state.starships);
+
+      return state;
+
     default:
       return state;
   }
