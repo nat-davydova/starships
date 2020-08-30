@@ -5,8 +5,13 @@ import Section from "components/Section/Section";
 import ComparisonTable from "components/ComparisonTable/ComparisonTable";
 
 import { sectionConfig } from "./config";
+import { grabbingStarship } from "../../store/actions";
 
 class Comparison extends Component {
+  async componentDidMount() {
+    await this.props.onGrabbingStarship();
+  }
+
   render() {
     const tbodyProps = [
       "cost_in_credits",
@@ -37,4 +42,10 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Comparison);
+const mapDispatchToProps = dispatch => {
+  return {
+    onGrabbingStarship: () => dispatch(grabbingStarship())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Comparison);

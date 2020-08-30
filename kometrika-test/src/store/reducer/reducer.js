@@ -5,7 +5,13 @@ const initState = {
 };
 
 const reducer = (state = initState, action) => {
-  return state;
+  switch (action.type) {
+    case "STARSHIPS_SUCCESS":
+      console.log(action.payload.config);
+      return state;
+    default:
+      return state;
+  }
 };
 
 export default reducer;
