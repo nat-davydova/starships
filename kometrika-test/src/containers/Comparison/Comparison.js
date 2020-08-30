@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Section from "components/Section/Section";
 import ComparisonTable from "components/ComparisonTable/ComparisonTable";
 
-import { sectionConfig, tempConfig } from "./config";
+import { sectionConfig } from "./config";
 
 class Comparison extends Component {
   render() {
@@ -21,7 +21,7 @@ class Comparison extends Component {
 
     return (
       <Section sectionConfig={sectionConfig}>
-        <ComparisonTable tbodyProps={tbodyProps} config={tempConfig} />
+        {/*<ComparisonTable tbodyProps={tbodyProps} config={tempConfig} />*/}
       </Section>
     );
   }
