@@ -9,10 +9,10 @@ const grabbingSuccess = config => {
   };
 };
 
-export const grabbingStarship = () => {
+export const grabbingStarship = num => {
   return async dispatch => {
     try {
-      const shipsConfig = await axios.get("/3/");
+      const shipsConfig = await axios.get(`/${num}/`);
       dispatch(grabbingSuccess(shipsConfig.data));
     } catch (e) {
       console.log(e);

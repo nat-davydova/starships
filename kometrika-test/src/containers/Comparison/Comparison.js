@@ -9,7 +9,11 @@ import { grabbingStarship } from "../../store/actions";
 
 class Comparison extends Component {
   async componentDidMount() {
-    await this.props.onGrabbingStarship();
+    const arr = [3, 10];
+
+    for (const elem of arr) {
+      await this.props.onGrabbingStarship(elem);
+    }
   }
 
   render() {
@@ -44,7 +48,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onGrabbingStarship: () => dispatch(grabbingStarship())
+    onGrabbingStarship: elem => dispatch(grabbingStarship(elem))
   };
 };
 
