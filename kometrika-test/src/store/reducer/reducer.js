@@ -1,7 +1,15 @@
-import { tempConfig } from "./config";
+import { shipsImgs } from "./config";
 
 const initState = {
   starships: []
+};
+
+const starshipConfigAddImgs = starshipConfig => {
+  const starshipName = starshipConfig.name;
+
+  starshipConfig.imgSrc = shipsImgs[starshipName];
+
+  return starshipConfig;
 };
 
 const reducer = (state = initState, action) => {
@@ -9,9 +17,13 @@ const reducer = (state = initState, action) => {
     case "STARSHIPS_SUCCESS":
       const starships = state.starships.concat(action.payload.config);
 
+      const starshipsWithImgs = starships.map(elem =>
+        starshipConfigAddImgs(elem)
+      );
+
       return {
         ...state,
-        starships: starships
+        starships: starshipsWithImgs
       };
     default:
       return state;
