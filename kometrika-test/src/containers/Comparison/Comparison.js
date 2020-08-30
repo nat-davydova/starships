@@ -8,34 +8,34 @@ import ErrorTxt from "components/UI/ErrorTxt/ErrorTxt";
 import { sectionConfig } from "./config";
 import { grabbingStarships, starshipsMinMax } from "store/actions/actions";
 
+const criteriaArr = [
+  "cost_in_credits",
+  "length",
+  "max_atmosphering_speed",
+  "crew",
+  "passengers",
+  "cargo_capacity",
+  "consumables",
+  "hyperdrive_rating",
+  "MGLT"
+];
+
 class Comparison extends Component {
   async componentDidMount() {
     // pass film number here
     // Star Wars V - is equal to '2' num in the SWAPI API
     await this.props.onGrabbingStarships(2);
-    this.props.onSortingStarships();
+    this.props.onSortingStarships(criteriaArr);
   }
 
   render() {
-    const tbodyProps = [
-      "cost_in_credits",
-      "length",
-      "max_atmosphering_speed",
-      "crew",
-      "passengers",
-      "cargo_capacity",
-      "consumables",
-      "hyperdrive_rating",
-      "MGLT"
-    ];
-
     return (
       <Section sectionConfig={sectionConfig}>
         {this.props.isError && <ErrorTxt errorTxt={this.props.errorTxt} />}
 
         {!this.props.isError && (
           <ComparisonTable
-            tbodyProps={tbodyProps}
+            tbodyProps={criteriaArr}
             config={this.props.starships}
           />
         )}
@@ -55,7 +55,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onGrabbingStarships: elem => dispatch(grabbingStarships(elem)),
-    onSortingStarships: () => dispatch(starshipsMinMax())
+    onSortingStarships: criteriaArr => dispatch(starshipsMinMax(criteriaArr))
   };
 };
 

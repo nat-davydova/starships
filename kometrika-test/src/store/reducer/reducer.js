@@ -42,7 +42,7 @@ const reducer = (state = initState, action) => {
       };
 
     case actionTypes.STARSHIPS_MINMAX:
-      console.log(state.starships);
+      console.log(action.payload.criteriaArr);
 
       return state;
 

@@ -37,8 +37,11 @@ export const grabbingStarships = num => {
   };
 };
 
-export const starshipsMinMax = () => {
+export const starshipsMinMax = criteriaArr => {
   return {
-    type: actionTypes.STARSHIPS_MINMAX
+    type: actionTypes.STARSHIPS_MINMAX,
+    payload: {
+      criteriaArr: criteriaArr
+    }
   };
 };
