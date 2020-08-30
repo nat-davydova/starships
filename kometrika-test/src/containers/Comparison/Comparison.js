@@ -9,7 +9,7 @@ import { grabbingStarship } from "../../store/actions";
 
 class Comparison extends Component {
   async componentDidMount() {
-    const arr = [3, 10];
+    const arr = [3, 10, 11, 12, 15, 17, 21, 22, 23];
 
     for (const elem of arr) {
       await this.props.onGrabbingStarship(elem);
