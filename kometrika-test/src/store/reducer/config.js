@@ -13,7 +13,7 @@ export const shipsImgs = {
   "Millennium Falcon": FalconImg,
   "Y-wing": YWingImg,
   "X-wing": XWingImg,
-  ["Executor"]: ExecutorImg,
+  Executor: ExecutorImg,
   "Rebel transport": RebelImg,
   "Slave 1": SlaveImg,
   "Imperial shuttle": ImperialImg,
