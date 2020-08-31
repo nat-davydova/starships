@@ -75,6 +75,26 @@ const starshipsCriteriaMinMax = (criteriaArr, shipsArr) => {
       const max = Math.max(...dataArr);
 
       minMaxVals[criteria] = [min, max];
+    } else if (criteria === "consumables") {
+      const dataArr = fullData[criteria].map(elem => {
+        const [numVal, units] = elem.split(" ");
+        let newNumVal = parseInt(numVal);
+
+        if (units === "week" || units === "weeks") {
+          newNumVal *= 7;
+        } else if (units === "month" || units === "months") {
+          newNumVal *= 30;
+        } else if (units === "year" || units === "years") {
+          newNumVal *= 365;
+        }
+
+        return newNumVal;
+      });
+
+      const min = Math.min(...dataArr);
+      const max = Math.max(...dataArr);
+
+      minMaxVals[criteria] = [min, max];
     }
   }
 
