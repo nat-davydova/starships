@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
 
 import Layout from "./containers/Layout/Layout";
 import Comparison from "./containers/Comparison/Comparison";
@@ -10,8 +11,10 @@ function App() {
   return (
     <div className="App">
       <Layout>
-        <Starships />
-        <Comparison />
+        <Switch>
+          <Route path="/comparison" component={Comparison} exact />
+          <Route path="/" component={Starships} />
+        </Switch>
       </Layout>
     </div>
   );
