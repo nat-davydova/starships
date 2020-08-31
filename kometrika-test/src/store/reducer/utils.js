@@ -45,7 +45,10 @@ const _transformNumericalData = (dataArr, additionalSeparator) => {
       .split(",")
       .join("");
     if (!isNaN(parseFloat(elem))) {
-      newDataArr.push({ [`${index}`]: parseFloat(elem) });
+      newDataArr.push({
+        index,
+        val: parseFloat(elem)
+      });
     }
   });
 
@@ -55,7 +58,7 @@ const _transformNumericalData = (dataArr, additionalSeparator) => {
 // consumables data transforming
 // weeks, months, years -> to days for simpler comparison
 // week -> 7 days, month -> 30 days, year -> 365 days
-export const _transformConsumablesData = dataArr => {
+const _transformConsumablesData = dataArr => {
   const newDataArr = dataArr.map((elem, index) => {
     const [numVal, units] = elem.split(" ");
     let newNumVal = parseInt(numVal);
@@ -68,10 +71,39 @@ export const _transformConsumablesData = dataArr => {
       newNumVal *= 365;
     }
 
-    return { [`${index}`]: newNumVal };
+    return { index, val: newNumVal };
   });
 
   return newDataArr;
+};
+
+const findMinMax = dataArr => {
+  let minVal = dataArr[0].val;
+  let maxVal = dataArr[0].val;
+
+  dataArr.forEach(({ val }) => {
+    if (val < minVal) {
+      minVal = val;
+    } else if (val > maxVal) {
+      maxVal = val;
+    }
+  });
+
+  let minIndexes = [];
+  let maxIndexes = [];
+
+  dataArr.forEach(({ index, val }) => {
+    if (val === minVal) {
+      minIndexes.push(index);
+    } else if (val === maxVal) {
+      maxIndexes.push(index);
+    }
+  });
+
+  return {
+    minIndexes,
+    maxIndexes
+  };
 };
 
 export const starshipsCriteriaMinMax = (criteriaArr, shipsArr) => {
@@ -91,26 +123,13 @@ export const starshipsCriteriaMinMax = (criteriaArr, shipsArr) => {
       criteria === "MGLT"
     ) {
       dataArr = _transformNumericalData(fullData[criteria]);
-
-      // const min = Math.min(...dataArr);
-      // const max = Math.max(...dataArr);
-      //
-      // minMaxVals[criteria] = [min, max];
     } else if (criteria === "max_atmosphering_speed") {
       dataArr = _transformNumericalData(fullData[criteria], "km");
-
-      // const min = Math.min(...dataArr);
-      // const max = Math.max(...dataArr);
-      //
-      // minMaxVals[criteria] = [min, max];
     } else if (criteria === "consumables") {
       dataArr = _transformConsumablesData(fullData["consumables"]);
-      // const min = Math.min(...dataArr);
-      // const max = Math.max(...dataArr);
-      //
-      // minMaxVals[criteria] = [min, max];
     }
-    console.log(dataArr);
+
+    const minmax = findMinMax(dataArr);
+    minMaxVals[criteria] = minmax;
   }
-  //console.log(minMaxVals);
 };
