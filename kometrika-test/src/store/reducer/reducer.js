@@ -16,6 +16,58 @@ const starshipConfigAddImgs = starshipConfig => {
   return starshipConfig;
 };
 
+const _starshipsFullData = (criteriaArr, shipsArr) => {
+  const fullData = {};
+
+  for (let criteria of criteriaArr) {
+    const valuesArr = [];
+
+    shipsArr.forEach(elem => {
+      valuesArr.push(elem[criteria]);
+    });
+
+    fullData[criteria] = valuesArr;
+  }
+
+  return fullData;
+};
+
+const starshipsCriteriaMinMax = (criteriaArr, shipsArr) => {
+  const fullData = _starshipsFullData(criteriaArr, shipsArr);
+
+  const minMaxVals = {};
+
+  for (const criteria in fullData) {
+    if (
+      criteria === "cost_in_credits" ||
+      criteria === "length" ||
+      criteria === "crew" ||
+      criteria === "passengers" ||
+      criteria === "cargo_capacity" ||
+      criteria === "hyperdrive_rating" ||
+      criteria === "MGLT"
+    ) {
+      const dataArr = [];
+      fullData[criteria].forEach(elem => {
+        elem = elem
+          .toString()
+          .split(",")
+          .join("");
+        if (!isNaN(parseFloat(elem))) {
+          dataArr.push(elem);
+        }
+      });
+
+      const min = Math.min(...dataArr);
+      const max = Math.max(...dataArr);
+
+      minMaxVals[criteria] = [min, max];
+
+      console.log(minMaxVals);
+    }
+  }
+};
+
 const reducer = (state = initState, action) => {
   switch (action.type) {
     case actionTypes.STARSHIPS_SUCCESS:
@@ -42,7 +94,9 @@ const reducer = (state = initState, action) => {
       };
 
     case actionTypes.STARSHIPS_MINMAX:
-      console.log(action.payload.criteriaArr);
+      const criteriaArr = action.payload.criteriaArr;
+
+      starshipsCriteriaMinMax(criteriaArr, state.starships);
 
       return state;
 
