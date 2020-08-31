@@ -62,10 +62,23 @@ const starshipsCriteriaMinMax = (criteriaArr, shipsArr) => {
       const max = Math.max(...dataArr);
 
       minMaxVals[criteria] = [min, max];
+    } else if (criteria === "max_atmosphering_speed") {
+      const dataArr = [];
+      fullData[criteria].forEach(elem => {
+        elem = elem.toString().split("km");
+        if (!isNaN(parseFloat(elem[0]))) {
+          dataArr.push(parseFloat(elem[0]));
+        }
+      });
 
-      console.log(minMaxVals);
+      const min = Math.min(...dataArr);
+      const max = Math.max(...dataArr);
+
+      minMaxVals[criteria] = [min, max];
     }
   }
+
+  console.log(minMaxVals);
 };
 
 const reducer = (state = initState, action) => {
