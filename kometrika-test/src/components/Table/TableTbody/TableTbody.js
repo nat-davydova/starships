@@ -5,7 +5,7 @@ import { v4 as uuid } from "uuid";
 import TableTr from "components/Table/TableTr/TableTr";
 import TableTd from "components/Table/TableTd/TableTd";
 
-const tableTbody = ({ config, tbodyProps = [] }) => {
+const tableTbody = ({ config, tbodyProps = [], comparisonCriteria }) => {
   const tableData = [];
   const defaultConfigElem = config[0];
 
@@ -25,8 +25,28 @@ const tableTbody = ({ config, tbodyProps = [] }) => {
     );
 
     // rendering table cells with data
-    config.forEach(configElem => {
-      trData.push(<TableTd key={uuid()}>{configElem[configKey]}</TableTd>);
+    config.forEach((configElem, index) => {
+      let isMin = false;
+      let isMax = false;
+
+      if (comparisonCriteria && comparisonCriteria[configKey]) {
+        const minIndexes = comparisonCriteria[configKey].minIndexes;
+        const maxIndexes = comparisonCriteria[configKey].maxIndexes;
+
+        if (minIndexes.indexOf(index) > -1) {
+          isMin = true;
+        }
+
+        if (maxIndexes.indexOf(index) > -1) {
+          isMax = true;
+        }
+      }
+
+      trData.push(
+        <TableTd key={uuid()} isMin={isMin} isMax={isMax}>
+          {configElem[configKey]}
+        </TableTd>
+      );
     });
 
     // rendering single table row

@@ -4,6 +4,7 @@ import { starshipConfigAddImgs, starshipsCriteriaMinMax } from "./utils";
 
 const initState = {
   starships: [],
+  starshipsComparisonMinMax: {},
   isError: false,
   errorTxt: ""
 };
@@ -36,9 +37,15 @@ const reducer = (state = initState, action) => {
     case actionTypes.STARSHIPS_MINMAX:
       const criteriaArr = action.payload.criteriaArr;
 
-      starshipsCriteriaMinMax(criteriaArr, state.starships);
+      const starshipsComparisonMinMax = starshipsCriteriaMinMax(
+        criteriaArr,
+        state.starships
+      );
 
-      return state;
+      return {
+        ...state,
+        starshipsComparisonMinMax: starshipsComparisonMinMax
+      };
 
     default:
       return state;

@@ -4,7 +4,12 @@ import classnames from "classnames";
 
 import styles from "./TableTd.module.scss";
 
-const tableTd = ({ isCriteria = false, children }) => {
+const tableTd = ({
+  isCriteria = false,
+  isMin = false,
+  isMax = false,
+  children
+}) => {
   let tdContent;
 
   if (isCriteria) {
@@ -14,7 +19,9 @@ const tableTd = ({ isCriteria = false, children }) => {
   }
 
   const tdClassnames = classnames({
-    [styles.isCriteria]: isCriteria
+    [styles.isCriteria]: isCriteria,
+    [styles.isMin]: isMin,
+    [styles.isMax]: isMax
   });
 
   return <td className={tdClassnames}>{tdContent}</td>;

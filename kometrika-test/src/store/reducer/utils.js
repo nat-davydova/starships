@@ -132,4 +132,6 @@ export const starshipsCriteriaMinMax = (criteriaArr, shipsArr) => {
     const minmax = findMinMax(dataArr);
     minMaxVals[criteria] = minmax;
   }
+
+  return minMaxVals;
 };

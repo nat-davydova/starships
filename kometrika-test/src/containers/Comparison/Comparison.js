@@ -25,7 +25,7 @@ class Comparison extends Component {
     // pass film number here
     // Star Wars V - is equal to '2' num in the SWAPI API
     await this.props.onGrabbingStarships(2);
-    this.props.onSortingStarships(criteriaArr);
+    await this.props.onSortingStarships(criteriaArr);
   }
 
   render() {
@@ -37,6 +37,7 @@ class Comparison extends Component {
           <ComparisonTable
             tbodyProps={criteriaArr}
             config={this.props.starships}
+            comparisonCriteria={this.props.starshipsMinMax}
           />
         )}
       </Section>
@@ -47,6 +48,7 @@ class Comparison extends Component {
 const mapStateToProps = state => {
   return {
     starships: state.starships,
+    starshipsMinMax: state.starshipsComparisonMinMax,
     isError: state.isError,
     errorTxt: state.errorTxt
   };

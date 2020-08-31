@@ -7,3 +7,17 @@
 	text-transform: uppercase;
 	color: $font-color--accent;
 }
+
+.isMin {
+	font: {
+		weight: 500;
+	}
+	color: $font-color--danger;
+}
+
+.isMax {
+	font: {
+		weight: 500;
+	}
+	color: $font-color--success;
+}
