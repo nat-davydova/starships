@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import Section from "components/Section/Section";
 import ComparisonTable from "components/ComparisonTable/ComparisonTable";
@@ -34,11 +35,14 @@ class Comparison extends Component {
         {this.props.isError && <ErrorTxt errorTxt={this.props.errorTxt} />}
 
         {!this.props.isError && (
-          <ComparisonTable
-            tbodyProps={criteriaArr}
-            config={this.props.starships}
-            comparisonCriteria={this.props.starshipsMinMax}
-          />
+          <Fragment>
+            <Link to="/">Change your choice</Link>
+            <ComparisonTable
+              tbodyProps={criteriaArr}
+              config={this.props.starships}
+              comparisonCriteria={this.props.starshipsMinMax}
+            />
+          </Fragment>
         )}
       </Section>
     );
