@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes, { element } from "prop-types";
+import PropTypes from "prop-types";
 
 import StarshipCard from "./StarshipCard/StarshipCard";
 
@@ -13,6 +13,8 @@ const starshipsGrid = ({ config }) => {
   return <div className={styles.grid}>{starshipsArr}</div>;
 };
 
-starshipsGrid.propTypes = {};
+starshipsGrid.propTypes = {
+  config: PropTypes.array.isRequired
+};
 
 export default starshipsGrid;

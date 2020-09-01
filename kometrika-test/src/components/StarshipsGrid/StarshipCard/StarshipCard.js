@@ -4,8 +4,6 @@ import PropTypes from "prop-types";
 import Card from "components/Card/Card";
 import Starship from "components/Starship/Starship";
 
-import StarDestroyerImg from "assets/img/starships/star-destroyer.png";
-
 const starshipCard = ({ config }) => {
   return (
     <Card>
@@ -14,6 +12,8 @@ const starshipCard = ({ config }) => {
   );
 };
 
-starshipCard.propTypes = {};
+starshipCard.propTypes = {
+  config: PropTypes.object.isRequired
+};
 
 export default starshipCard;
