@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 
 import Section from "components/Section/Section";
 import ComparisonTable from "components/ComparisonTable/ComparisonTable";
 import ErrorTxt from "components/UI/ErrorTxt/ErrorTxt";
+import RoutingBtn from "components/UI/RoutingBtn/RoutingBtn";
 
 import { sectionConfig } from "./config";
 import { grabbingStarships, starshipsMinMax } from "store/actions/actions";
@@ -36,7 +36,7 @@ class Comparison extends Component {
 
         {!this.props.isError && (
           <Fragment>
-            <Link to="/">Change your choice</Link>
+            <RoutingBtn to="/">Change Your Choice</RoutingBtn>
             <ComparisonTable
               tbodyProps={criteriaArr}
               config={this.props.starships}

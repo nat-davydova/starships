@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import Section from "components/Section/Section";
+import RoutingBtn from "components/UI/RoutingBtn/RoutingBtn";
 
 import { sectionConfig } from "./config";
 
@@ -9,7 +10,7 @@ class Starships extends Component {
   render() {
     return (
       <Section sectionConfig={sectionConfig}>
-        <Link to="/comparison">Go To Comparison</Link>
+        <RoutingBtn to="/comparison">Go To Comparison</RoutingBtn>
       </Section>
     );
   }
