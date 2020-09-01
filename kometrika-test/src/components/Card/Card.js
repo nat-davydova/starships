@@ -1,10 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const card = props => {
-  return <div></div>;
+const card = ({ children }) => {
+  return <div>{children}</div>;
 };
 
-card.propTypes = {};
+card.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.node.isRequired,
+    PropTypes.element.isRequired
+  ])
+};
 
 export default card;
