@@ -3,9 +3,11 @@ import PropTypes from "prop-types";
 
 import StarshipCard from "./StarshipCard/StarshipCard";
 
+import styles from "./StarshipsGrid.module.scss";
+
 const starshipsGrid = props => {
   return (
-    <div>
+    <div className={styles.grid}>
       <StarshipCard />
       <StarshipCard />
       <StarshipCard />
