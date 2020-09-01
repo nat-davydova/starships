@@ -51,10 +51,10 @@ class Comparison extends Component {
 
 const mapStateToProps = state => {
   return {
-    starships: state.starships,
-    starshipsMinMax: state.starshipsComparisonMinMax,
-    isError: state.isError,
-    errorTxt: state.errorTxt
+    starships: state.comparison.starships,
+    starshipsMinMax: state.comparison.starshipsComparisonMinMax,
+    isError: state.comparison.isError,
+    errorTxt: state.comparison.errorTxt
   };
 };
 
