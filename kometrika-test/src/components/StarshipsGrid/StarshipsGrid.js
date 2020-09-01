@@ -1,24 +1,16 @@
 import React from "react";
-import PropTypes from "prop-types";
+import PropTypes, { element } from "prop-types";
 
 import StarshipCard from "./StarshipCard/StarshipCard";
 
 import styles from "./StarshipsGrid.module.scss";
 
-const starshipsGrid = props => {
-  return (
-    <div className={styles.grid}>
-      <StarshipCard />
-      <StarshipCard />
-      <StarshipCard />
-      <StarshipCard />
-      <StarshipCard />
-      <StarshipCard />
-      <StarshipCard />
-      <StarshipCard />
-      <StarshipCard />
-    </div>
-  );
+const starshipsGrid = ({ config }) => {
+  const starshipsArr = config.map(elem => {
+    return <StarshipCard config={elem} />;
+  });
+
+  return <div className={styles.grid}>{starshipsArr}</div>;
 };
 
 starshipsGrid.propTypes = {};

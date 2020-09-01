@@ -19,7 +19,7 @@ class Starships extends Component {
     return (
       <Section sectionConfig={sectionConfig}>
         <RoutingBtn to="/comparison">Go To Comparison</RoutingBtn>
-        <StarshipsGrid />
+        <StarshipsGrid config={this.props.starships} />
       </Section>
     );
   }

@@ -6,18 +6,10 @@ import Starship from "components/Starship/Starship";
 
 import StarDestroyerImg from "assets/img/starships/star-destroyer.png";
 
-const tempConfig = {
-  imgSrc: StarDestroyerImg,
-  name: "Star Destroyer",
-  model: "Imperial I-class Star Destroyer",
-  manufacturer: "Kuat Drive Yards",
-  starship_class: "Star Destroyer"
-};
-
-const starshipCard = props => {
+const starshipCard = ({ config }) => {
   return (
     <Card>
-      <Starship config={tempConfig} />
+      <Starship config={config} />
     </Card>
   );
 };
