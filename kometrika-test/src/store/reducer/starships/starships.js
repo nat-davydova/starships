@@ -1,5 +1,6 @@
 import * as actionTypes from "store/actions/actionTypes";
 import { starshipConfigAddImgs } from "../utils";
+import { v4 as uuid } from "uuid";
 
 const initState = {
   starships: [],
@@ -12,15 +13,16 @@ const starshipsReducer = (state = initState, action) => {
     case actionTypes.STARSHIPS_SUCCESS:
       const starships = state.starships.concat(action.payload.config);
 
-      const starshipsWithImgs = starships.map(elem =>
-        starshipConfigAddImgs(elem)
-      );
+      const starshipsDataTransformed = starships.map(elem => {
+        elem.id = uuid();
+        return starshipConfigAddImgs(elem);
+      });
 
       return {
         ...state,
         isError: false,
         errorTxt: "",
-        starships: starshipsWithImgs
+        starships: starshipsDataTransformed
       };
 
     case actionTypes.STARSHIPS_ERROR:

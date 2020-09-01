@@ -7,7 +7,7 @@ import styles from "./StarshipsGrid.module.scss";
 
 const starshipsGrid = ({ config }) => {
   const starshipsArr = config.map(elem => {
-    return <StarshipCard config={elem} />;
+    return <StarshipCard key={elem.id} config={elem} />;
   });
 
   return <div className={styles.grid}>{starshipsArr}</div>;
