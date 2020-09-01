@@ -7,6 +7,14 @@ const starshipsGrid = props => {
   return (
     <div>
       <StarshipCard />
+      <StarshipCard />
+      <StarshipCard />
+      <StarshipCard />
+      <StarshipCard />
+      <StarshipCard />
+      <StarshipCard />
+      <StarshipCard />
+      <StarshipCard />
     </div>
   );
 };
