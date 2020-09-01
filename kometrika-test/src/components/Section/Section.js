@@ -15,7 +15,7 @@ const section = ({ sectionConfig, children }) => {
         <SectionTitle>{title}</SectionTitle>
         <SectionSubtitle>{subtitle}</SectionSubtitle>
       </header>
-      <div>{children}</div>
+      <div className={styles.content}>{children}</div>
     </section>
   );
 };

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 import Section from "components/Section/Section";
 import RoutingBtn from "components/UI/RoutingBtn/RoutingBtn";
