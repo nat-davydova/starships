@@ -6,7 +6,7 @@ import RoutingBtn from "components/UI/RoutingBtn/RoutingBtn";
 import StarshipsGrid from "components/StarshipsGrid/StarshipsGrid";
 
 import { sectionConfig } from "./config";
-import { grabbingStarships } from "store/actions/actions";
+import { grabbingStarships, pickStarshipCard } from "store/actions/actions";
 
 class Starships extends Component {
   async componentDidMount() {
@@ -37,7 +37,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onGrabbingStarships: elem => dispatch(grabbingStarships(elem))
+    onGrabbingStarships: elem => dispatch(grabbingStarships(elem)),
+    onPickingShip: key => dispatch(pickStarshipCard(key))
   };
 };
 

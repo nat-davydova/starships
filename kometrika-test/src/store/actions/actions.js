@@ -1,2 +1,2 @@
-export { grabbingStarships } from "./starshipsActions";
+export { grabbingStarships, pickStarshipCard } from "./starshipsActions";
 export { starshipsMinMax } from "./comparisonActions";

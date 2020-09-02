@@ -36,3 +36,18 @@ export const grabbingStarships = num => {
     }
   };
 };
+
+const pickCard = cardKey => {
+  return {
+    type: actionTypes.STARSHIPS_PICK,
+    payload: {
+      cardKey: cardKey
+    }
+  };
+};
+
+export const pickStarshipCard = cardKey => {
+  return dispatch => {
+    dispatch(pickCard(cardKey));
+  };
+};

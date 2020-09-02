@@ -38,6 +38,10 @@ const starshipsReducer = (state = initState, action) => {
         errorTxt: errorTxt
       };
 
+    case actionTypes.STARSHIPS_PICK:
+      console.log("clicked");
+      return state;
+
     default:
       return state;
   }
