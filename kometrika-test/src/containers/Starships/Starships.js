@@ -18,9 +18,13 @@ class Starships extends Component {
   }
 
   render() {
+    const routingBtnDisabled = this.props.pickedStarships.length < 2;
+
     return (
       <Section sectionConfig={sectionConfig}>
-        <RoutingBtn to="/comparison">Go To Comparison</RoutingBtn>
+        <RoutingBtn to="/comparison" isDisabled={routingBtnDisabled}>
+          Go To Comparison
+        </RoutingBtn>
         <StarshipsGrid
           config={this.props.starships}
           pickShip={this.props.onPickingShip}
