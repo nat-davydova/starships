@@ -17,6 +17,7 @@ const starshipsGrid = ({ config, pickShip, pickedShipsArr }) => {
         config={elem}
         clicked={() => pickShip(elem.id)}
         isPicked={!!isPicked}
+        className={styles.grid_item}
       />
     );
   });
