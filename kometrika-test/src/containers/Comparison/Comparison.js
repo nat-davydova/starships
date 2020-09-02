@@ -22,8 +22,8 @@ const criteriaArr = [
 
 class Comparison extends Component {
   componentDidMount() {
-    if (this.props.starships.length > 0) {
-      this.props.onSortingStarships(this.props.starships, criteriaArr);
+    if (this.props.pickedStarships.length > 0) {
+      this.props.onSortingStarships(this.props.pickedStarships, criteriaArr);
     }
   }
 
@@ -33,7 +33,7 @@ class Comparison extends Component {
         <RoutingBtn to="/">Change Your Choice</RoutingBtn>
         <ComparisonTable
           tbodyProps={criteriaArr}
-          config={this.props.starships}
+          config={this.props.pickedStarships}
           comparisonCriteria={this.props.starshipsMinMax}
         />
       </Section>
@@ -43,7 +43,7 @@ class Comparison extends Component {
 
 const mapStateToProps = state => {
   return {
-    starships: state.starships.starships,
+    pickedStarships: state.starships.pickedStarships,
     starshipsMinMax: state.comparison.starshipsComparisonMinMax
   };
 };
