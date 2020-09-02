@@ -41,7 +41,7 @@ class Comparison extends Component {
 
 const mapStateToProps = state => {
   return {
-    starships: state.comparison.starships,
+    starships: state.starships.starships,
     starshipsMinMax: state.comparison.starshipsComparisonMinMax
   };
 };
