@@ -33,12 +33,18 @@ const tableTbody = ({ config, tbodyProps = [], comparisonCriteria }) => {
         const minIndexes = comparisonCriteria[configKey].minIndexes;
         const maxIndexes = comparisonCriteria[configKey].maxIndexes;
 
-        if (minIndexes.indexOf(index) > -1) {
-          isMin = true;
+        if (
+          maxIndexes.indexOf(index) > -1 ||
+          // if we have only 2 items and one of them is not a number (like n/a or unknown), so it's index is not in minIndexes
+          (maxIndexes.length === 0 &&
+            minIndexes.indexOf(index) > -1 &&
+            minIndexes.length < 2)
+        ) {
+          isMax = true;
         }
 
-        if (maxIndexes.indexOf(index) > -1) {
-          isMax = true;
+        if (minIndexes.indexOf(index) > -1) {
+          isMin = true;
         }
       }
 
