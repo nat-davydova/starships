@@ -1,5 +1,5 @@
 import * as actionTypes from "store/actions/actionTypes";
-import { starshipConfigAddImgs } from "../utils";
+import { starshipConfigAddImgs } from "./utils";
 import { v4 as uuid } from "uuid";
 
 const initState = {

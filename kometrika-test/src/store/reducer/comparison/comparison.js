@@ -1,6 +1,9 @@
-import * as actionTypes from "../actions/actionTypes";
+import * as actionTypes from "../../actions/actionTypes";
 
-import { starshipConfigAddImgs, starshipsCriteriaMinMax } from "./utils";
+import {
+  starshipConfigAddImgs,
+  starshipsCriteriaMinMax
+} from "../starships/utils";
 
 const initState = {
   starships: [],
@@ -9,7 +12,7 @@ const initState = {
   errorTxt: ""
 };
 
-const reducer = (state = initState, action) => {
+const comparison = (state = initState, action) => {
   switch (action.type) {
     case actionTypes.STARSHIPS_SUCCESS:
       const starships = state.starships.concat(action.payload.config);
@@ -52,4 +55,4 @@ const reducer = (state = initState, action) => {
   }
 };
 
-export default reducer;
+export default comparison;

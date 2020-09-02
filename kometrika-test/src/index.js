@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
 
-import reducer from "./store/reducer/reducer";
+import comparison from "./store/reducer/comparison/comparison";
 import starshipsReducer from "./store/reducer/starships/starships";
 
 import "./index.scss";
@@ -15,7 +15,7 @@ import "./index.scss";
 const rootReducer = combineReducers({
   //here we define different areas of the app and apply reducers to them
   starships: starshipsReducer,
-  comparison: reducer
+  comparison: comparison
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
