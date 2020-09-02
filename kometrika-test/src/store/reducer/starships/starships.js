@@ -1,5 +1,6 @@
 import * as actionTypes from "store/actions/actionTypes";
 import { v4 as uuid } from "uuid";
+import cloneDeep from "lodash.clonedeep";
 
 import { starshipConfigAddImgs } from "./utils";
 
@@ -12,9 +13,11 @@ const initState = {
 const starshipsReducer = (state = initState, action) => {
   switch (action.type) {
     case actionTypes.STARSHIPS_SUCCESS:
-      const starships = state.starships.concat(action.payload.config);
+      const starshipsArr = cloneDeep(state.starships);
 
-      const starshipsDataTransformed = starships.map(elem => {
+      starshipsArr.push(action.payload.config);
+
+      const starshipsDataTransformed = starshipsArr.map(elem => {
         elem.id = uuid();
         return starshipConfigAddImgs(elem);
       });
@@ -23,7 +26,7 @@ const starshipsReducer = (state = initState, action) => {
         ...state,
         isError: false,
         errorTxt: "",
-        starships: starshipsDataTransformed
+        starships: [...starshipsDataTransformed]
       };
 
     case actionTypes.STARSHIPS_ERROR:
