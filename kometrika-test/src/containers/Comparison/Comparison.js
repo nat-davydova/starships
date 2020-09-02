@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 import Section from "components/Section/Section";
 import ComparisonTable from "components/ComparisonTable/ComparisonTable";
@@ -28,15 +29,23 @@ class Comparison extends Component {
   }
 
   render() {
+    const isRedirected = this.props.pickedStarships.length < 2;
+
     return (
-      <Section sectionConfig={sectionConfig}>
-        <RoutingBtn to="/">Change Your Choice</RoutingBtn>
-        <ComparisonTable
-          tbodyProps={criteriaArr}
-          config={this.props.pickedStarships}
-          comparisonCriteria={this.props.starshipsMinMax}
-        />
-      </Section>
+      <Fragment>
+        {isRedirected && <Redirect to="/" />}
+
+        {!isRedirected && (
+          <Section sectionConfig={sectionConfig}>
+            <RoutingBtn to="/">Change Your Choice</RoutingBtn>
+            <ComparisonTable
+              tbodyProps={criteriaArr}
+              config={this.props.pickedStarships}
+              comparisonCriteria={this.props.starshipsMinMax}
+            />
+          </Section>
+        )}
+      </Fragment>
     );
   }
 }
