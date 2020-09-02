@@ -10,10 +10,11 @@ const comparison = (state = initState, action) => {
   switch (action.type) {
     case actionTypes.STARSHIPS_MINMAX:
       const criteriaArr = action.payload.criteriaArr;
+      const starshipsArr = action.payload.starshipsArr;
 
       const starshipsComparisonMinMax = starshipsCriteriaMinMax(
         criteriaArr,
-        state.starships.starships
+        starshipsArr
       );
 
       return {

@@ -21,8 +21,10 @@ const criteriaArr = [
 ];
 
 class Comparison extends Component {
-  async componentDidMount() {
-    await this.props.onSortingStarships(criteriaArr);
+  componentDidMount() {
+    if (this.props.starships.length > 0) {
+      this.props.onSortingStarships(this.props.starships, criteriaArr);
+    }
   }
 
   render() {
@@ -48,7 +50,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onSortingStarships: criteriaArr => dispatch(starshipsMinMax(criteriaArr))
+    onSortingStarships: (starshipsArr, criteriaArr) =>
+      dispatch(starshipsMinMax(starshipsArr, criteriaArr))
   };
 };
 
