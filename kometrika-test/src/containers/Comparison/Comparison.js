@@ -1,13 +1,12 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import Section from "components/Section/Section";
 import ComparisonTable from "components/ComparisonTable/ComparisonTable";
-import ErrorTxt from "components/UI/ErrorTxt/ErrorTxt";
 import RoutingBtn from "components/UI/RoutingBtn/RoutingBtn";
 
 import { sectionConfig } from "./config";
-import { grabbingStarships, starshipsMinMax } from "store/actions/actions";
+import { starshipsMinMax } from "store/actions/actions";
 
 const criteriaArr = [
   "cost_in_credits",
@@ -23,27 +22,18 @@ const criteriaArr = [
 
 class Comparison extends Component {
   async componentDidMount() {
-    // pass film number here
-    // Star Wars V - is equal to '2' num in the SWAPI API
-    await this.props.onGrabbingStarships(2);
     await this.props.onSortingStarships(criteriaArr);
   }
 
   render() {
     return (
       <Section sectionConfig={sectionConfig}>
-        {this.props.isError && <ErrorTxt errorTxt={this.props.errorTxt} />}
-
-        {!this.props.isError && (
-          <Fragment>
-            <RoutingBtn to="/">Change Your Choice</RoutingBtn>
-            <ComparisonTable
-              tbodyProps={criteriaArr}
-              config={this.props.starships}
-              comparisonCriteria={this.props.starshipsMinMax}
-            />
-          </Fragment>
-        )}
+        <RoutingBtn to="/">Change Your Choice</RoutingBtn>
+        <ComparisonTable
+          tbodyProps={criteriaArr}
+          config={this.props.starships}
+          comparisonCriteria={this.props.starshipsMinMax}
+        />
       </Section>
     );
   }
@@ -52,15 +42,12 @@ class Comparison extends Component {
 const mapStateToProps = state => {
   return {
     starships: state.comparison.starships,
-    starshipsMinMax: state.comparison.starshipsComparisonMinMax,
-    isError: state.comparison.isError,
-    errorTxt: state.comparison.errorTxt
+    starshipsMinMax: state.comparison.starshipsComparisonMinMax
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onGrabbingStarships: elem => dispatch(grabbingStarships(elem)),
     onSortingStarships: criteriaArr => dispatch(starshipsMinMax(criteriaArr))
   };
 };
