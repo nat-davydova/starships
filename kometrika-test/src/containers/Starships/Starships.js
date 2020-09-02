@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 
 import Section from "components/Section/Section";
 import RoutingBtn from "components/UI/RoutingBtn/RoutingBtn";
 import StarshipsGrid from "components/StarshipsGrid/StarshipsGrid";
+import ErrorTxt from "components/UI/ErrorTxt/ErrorTxt";
 
 import { sectionConfig } from "./config";
 import { grabbingStarships, pickStarshipCard } from "store/actions/actions";
@@ -22,14 +23,19 @@ class Starships extends Component {
 
     return (
       <Section sectionConfig={sectionConfig}>
-        <RoutingBtn to="/comparison" isDisabled={routingBtnDisabled}>
-          Go To Comparison
-        </RoutingBtn>
-        <StarshipsGrid
-          config={this.props.starships}
-          pickShip={this.props.onPickingShip}
-          pickedShipsArr={this.props.pickedStarships}
-        />
+        {this.props.isError && <ErrorTxt errorTxt={this.props.errorTxt} />}
+        {!this.props.isError && (
+          <Fragment>
+            <RoutingBtn to="/comparison" isDisabled={routingBtnDisabled}>
+              Go To Comparison
+            </RoutingBtn>
+            <StarshipsGrid
+              config={this.props.starships}
+              pickShip={this.props.onPickingShip}
+              pickedShipsArr={this.props.pickedStarships}
+            />
+          </Fragment>
+        )}
       </Section>
     );
   }
