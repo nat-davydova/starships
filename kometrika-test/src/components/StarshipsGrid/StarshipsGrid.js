@@ -3,18 +3,20 @@ import PropTypes from "prop-types";
 
 import StarshipCard from "./StarshipCard/StarshipCard";
 
+import { findArrayElemObj } from "store/reducer/starships/utils";
+
 import styles from "./StarshipsGrid.module.scss";
 
 const starshipsGrid = ({ config, pickShip, pickedShipsArr }) => {
   const starshipsArr = config.map(elem => {
-    const isPicked = pickedShipsArr.indexOf(elem) > -1;
+    const isPicked = findArrayElemObj(pickedShipsArr, "id", elem.id);
 
     return (
       <StarshipCard
         key={elem.id}
         config={elem}
         clicked={() => pickShip(elem.id)}
-        isPicked={isPicked}
+        isPicked={!!isPicked}
       />
     );
   });
