@@ -12,7 +12,9 @@ class Starships extends Component {
   async componentDidMount() {
     // pass film number here
     // Star Wars V - is equal to '2' num in the SWAPI API
-    await this.props.onGrabbingStarships(2);
+    if (this.props.starships.length === 0) {
+      await this.props.onGrabbingStarships(2);
+    }
   }
 
   render() {
