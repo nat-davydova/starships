@@ -28,6 +28,7 @@ const tableTbody = ({ config, tbodyProps = [], comparisonCriteria }) => {
     config.forEach((configElem, index) => {
       let isMin = false;
       let isMax = false;
+      let isEqual = false;
 
       if (comparisonCriteria && comparisonCriteria[configKey]) {
         const minIndexes = comparisonCriteria[configKey].minIndexes;
@@ -41,15 +42,15 @@ const tableTbody = ({ config, tbodyProps = [], comparisonCriteria }) => {
             minIndexes.length < 2)
         ) {
           isMax = true;
-        }
-
-        if (minIndexes.indexOf(index) > -1) {
+        } else if (maxIndexes.length === 0 && minIndexes.length === 2) {
+          isEqual = true;
+        } else if (minIndexes.indexOf(index) > -1) {
           isMin = true;
         }
       }
 
       trData.push(
-        <TableTd key={uuid()} isMin={isMin} isMax={isMax}>
+        <TableTd key={uuid()} isMin={isMin} isMax={isMax} isEqual={isEqual}>
           {configElem[configKey]}
         </TableTd>
       );

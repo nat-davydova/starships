@@ -1,4 +1,6 @@
 // descriptive colors !!do not use these variables directly!!
+$_aqua-blue: aqua;
+
 $_black: #000;
 
 $_straw-brown: #D7C078;
@@ -25,6 +27,7 @@ $background--medium: $_medium-grey;
 $font-color--primary: $_white;
 $font-color--secondary: rgba($_white, .7);
 $font-color--accent: $_straw-brown;
+$font-color--accent2: $_aqua-blue;
 $font-color--danger: $_brick-red;
 $font-color--success: $_reef-green;
 $font-color--dark: $_nero-grey;

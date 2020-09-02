@@ -8,6 +8,7 @@ const tableTd = ({
   isCriteria = false,
   isMin = false,
   isMax = false,
+  isEqual = false,
   children
 }) => {
   let tdContent;
@@ -21,7 +22,8 @@ const tableTd = ({
   const tdClassnames = classnames({
     [styles.isCriteria]: isCriteria,
     [styles.isMin]: isMin,
-    [styles.isMax]: isMax
+    [styles.isMax]: isMax,
+    [styles.isEqual]: isEqual
   });
 
   return <td className={tdClassnames}>{tdContent}</td>;
