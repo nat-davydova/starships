@@ -2,7 +2,7 @@
 
 The App grabs a list of Star Wars V starships from the server (via SWAPI) and allows to chose 2 or more ships and compare them via different criteria.
 
-If any parameter is the largest - it's of green color in the comparison table, if it's the smallest one - of red color, if we have only 2 starships and one of their parameters is equal, it is of blue color.
+If any parameter is the largest - it's of *green* color in the comparison table, if it's the smallest one - of *red* color, if we have only 2 starships and one of their parameters is equal, it is of *blue* color.
 
 <a href="https://eisenpar.com/starships/" target="_blank">Check the Demo</a>
 
