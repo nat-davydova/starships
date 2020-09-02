@@ -6,6 +6,7 @@ import { starshipConfigAddImgs } from "./utils";
 
 const initState = {
   starships: [],
+  pickedStarships: [],
   isError: false,
   errorTxt: ""
 };
@@ -39,8 +40,23 @@ const starshipsReducer = (state = initState, action) => {
       };
 
     case actionTypes.STARSHIPS_PICK:
-      console.log("clicked");
-      return state;
+      const pickedShipId = action.payload.cardKey;
+      const pickedShipsArr = cloneDeep(state.pickedStarships);
+
+      if (pickedShipsArr.indexOf(pickedShipId) < 0) {
+        pickedShipsArr.push(pickedShipId);
+      } else {
+        const indexToRemove = pickedShipsArr.indexOf(pickedShipId);
+
+        pickedShipsArr.splice(indexToRemove, 1);
+      }
+
+      console.log(pickedShipsArr);
+
+      return {
+        ...state,
+        pickedStarships: [...pickedShipsArr]
+      };
 
     default:
       return state;
