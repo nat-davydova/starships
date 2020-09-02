@@ -24,6 +24,7 @@ class Starships extends Component {
         <StarshipsGrid
           config={this.props.starships}
           pickShip={this.props.onPickingShip}
+          pickedShipsArr={this.props.pickedStarships}
         />
       </Section>
     );
@@ -33,6 +34,7 @@ class Starships extends Component {
 const mapStateToProps = state => {
   return {
     starships: state.starships.starships,
+    pickedStarships: state.starships.pickedStarships,
     isError: state.starships.isError,
     errorTxt: state.starships.errorTxt
   };

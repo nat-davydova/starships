@@ -5,13 +5,16 @@ import StarshipCard from "./StarshipCard/StarshipCard";
 
 import styles from "./StarshipsGrid.module.scss";
 
-const starshipsGrid = ({ config, pickShip }) => {
+const starshipsGrid = ({ config, pickShip, pickedShipsArr }) => {
   const starshipsArr = config.map(elem => {
+    const isPicked = pickedShipsArr.indexOf(elem) > -1;
+
     return (
       <StarshipCard
         key={elem.id}
         config={elem}
         clicked={() => pickShip(elem.id)}
+        isPicked={isPicked}
       />
     );
   });
@@ -21,7 +24,8 @@ const starshipsGrid = ({ config, pickShip }) => {
 
 starshipsGrid.propTypes = {
   config: PropTypes.array.isRequired,
-  pickShip: PropTypes.func.isRequired
+  pickShip: PropTypes.func.isRequired,
+  pickedShipsArr: PropTypes.array.isRequired
 };
 
 export default starshipsGrid;
