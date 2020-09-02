@@ -2,7 +2,7 @@ import * as actionTypes from "store/actions/actionTypes";
 import { v4 as uuid } from "uuid";
 import cloneDeep from "lodash.clonedeep";
 
-import { starshipConfigAddImgs } from "./utils";
+import { starshipConfigAddImgs, findArrayElemObj } from "./utils";
 
 const initState = {
   starships: [],
@@ -43,15 +43,20 @@ const starshipsReducer = (state = initState, action) => {
       const pickedShipId = action.payload.cardKey;
       const pickedShipsArr = cloneDeep(state.pickedStarships);
 
-      if (pickedShipsArr.indexOf(pickedShipId) < 0) {
-        pickedShipsArr.push(pickedShipId);
+      const isPicked = findArrayElemObj(pickedShipsArr, "id", pickedShipId);
+      const starshipElem = findArrayElemObj(
+        state.starships,
+        "id",
+        pickedShipId
+      )[0];
+
+      if (!isPicked) {
+        pickedShipsArr.push(starshipElem);
       } else {
-        const indexToRemove = pickedShipsArr.indexOf(pickedShipId);
+        const indexPicked = isPicked[1];
 
-        pickedShipsArr.splice(indexToRemove, 1);
+        pickedShipsArr.splice(indexPicked, 1);
       }
-
-      console.log(pickedShipsArr);
 
       return {
         ...state,

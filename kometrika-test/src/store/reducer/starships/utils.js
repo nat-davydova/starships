@@ -9,3 +9,17 @@ export const starshipConfigAddImgs = starshipConfig => {
 
   return starshipConfig;
 };
+
+// find an object element and index of the element in an array by prop and value
+export const findArrayElemObj = (array, prop, val) => {
+  let result = null;
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i][prop] === val) {
+      result = [array[i], i];
+      break;
+    }
+  }
+
+  return result;
+};
