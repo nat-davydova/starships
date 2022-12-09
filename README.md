@@ -6,7 +6,7 @@ If any parameter is the largest - it's of *green* color in the comparison table,
 
 <a href="https://eisenpar.com/starships/" target="_blank">Check the Demo</a>
 
-<img src="http://natali-davydova.me/assets/img/starships/full-1.png" width="650" />
+<img src="http://eisenpar.com/portfolio2/assets/img/starships/full-1.png" width="650" />
 
 - React v16 (CRA)
 - Routing
